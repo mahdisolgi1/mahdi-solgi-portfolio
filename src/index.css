@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins";
+  scroll-behavior: smooth;
+}
+@layer base {
+  body {
+    @apply text-black transition-colors duration-700 bg-white dark:bg-black dark:text-white;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
+}
+html {
+  scroll-padding-top: 100px;
+}
