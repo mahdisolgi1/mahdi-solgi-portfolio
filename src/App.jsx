@@ -1,5 +1,6 @@
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
+import Tech from "./Components/Tech";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main className="flex flex-col items-center px-4 md:px-8 lg:px-16 ">
         <Navbar />
         <Hero />
+        <Tech />
       </main>
     </>
   );
