@@ -3,6 +3,7 @@ import Hero from "./Components/Hero";
 import Tech from "./Components/Tech";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import Projects from "./Components/Projects";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar />
         <Hero />
         <Tech />
+        <Projects />
         <Contact />
       </main>
       <Footer />
