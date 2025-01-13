@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Tech from "./Components/Tech";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <Hero />
         <Tech />
+        <Contact />
       </main>
     </>
   );
