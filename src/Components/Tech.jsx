@@ -63,12 +63,19 @@ const Tech = () => {
           }}
         >
           {techIcons.concat(techIcons).map(({ Icon, color, size }, index) => (
-            <li key={index} className="flex-shrink-0">
+            <motion.li
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex-shrink-0"
+              key={index}
+            >
               <Icon
                 size={size}
                 className={`cursor-pointer text-[80px] ${color} transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]`}
               />
-            </li>
+            </motion.li>
           ))}
         </motion.ul>
       </div>
