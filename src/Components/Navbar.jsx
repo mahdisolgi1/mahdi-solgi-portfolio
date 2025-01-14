@@ -79,7 +79,7 @@ const Navbar = () => {
         </a>
 
         <ul className="hidden gap-10 md:flex">
-          {["home", "tech", "projects", "contact"].map((section) => (
+          {["Home", "Tech", "Projects", "Contact"].map((section) => (
             <li key={section}>
               <a
                 href={`#${section}`}
@@ -134,7 +134,7 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col gap-8">
-          {["home", "tech", "projects", "contact"].map((section) => (
+          {["Home", "Tech", "Projects", "Contact"].map((section) => (
             <li key={section}>
               <a
                 href={`#${section}`}
