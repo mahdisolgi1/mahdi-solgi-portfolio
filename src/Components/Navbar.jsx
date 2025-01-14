@@ -147,6 +147,30 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href="https://www.linkedin.com/in/mahdi-solgi/"
+              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
+            >
+              <BsLinkedin />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/mahdisolgi1"
+              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
+            >
+              <BsGithub />
+            </a>
+          </li>
+          <li>
+            <button
+              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
+              onClick={toggleDarkMode}
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
+          </li>
         </ul>
       </div>
     </>
