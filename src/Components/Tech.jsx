@@ -57,7 +57,7 @@ const Tech = () => {
           }}
           transition={{
             repeat: Infinity,
-            repeatType: "loop",
+            repeatType: "mirror",
             ease: "linear",
             duration: 35,
           }}
