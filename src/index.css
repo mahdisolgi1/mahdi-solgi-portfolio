@@ -5,10 +5,11 @@
 * {
   font-family: "Poppins";
   scroll-behavior: smooth;
+  /* transition: all 0.3s; */
 }
 @layer base {
   body {
-    @apply text-black transition-colors duration-700 bg-white dark:bg-black dark:text-white;
+    @apply text-black transition-colors duration-1000 bg-white dark:bg-black dark:text-white;
   }
 }
 
@@ -25,4 +26,28 @@
 }
 html {
   scroll-padding-top: 100px;
+}
+.vibrateEffect {
+  animation: vibrate 2s linear infinite alternate;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  1% {
+    transform: translate(2px, 2px);
+  }
+  2% {
+    transform: translate(-2px, -2px);
+  }
+  5% {
+    transform: translate(3px, -3px);
+  }
+  6% {
+    transform: translate(-3px, 3px);
+  }
+  7% {
+    transform: translate(0);
+  }
 }
