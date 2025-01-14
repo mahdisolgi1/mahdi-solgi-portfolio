@@ -13,7 +13,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -21,7 +21,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
+  background: linear-gradient(to bottom, #a2a5af, #1d2029);
 }
 html {
   scroll-padding-top: 100px;
