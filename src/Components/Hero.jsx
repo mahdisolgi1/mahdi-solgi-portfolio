@@ -35,9 +35,9 @@ const Hero = () => {
               👋
             </span>
             I’m a frontend developer skilled in React.js, Next.js, and Tailwind,
-            focused on building dynamic, clean and functionaly experiences. I
-            also enjoy working with Figma to create designs and bring other
-            people’s designs to life. Let’s create something awesome together!
+            dedicated to building dynamic and functional user experiences. I’m
+            passionate about turning ideas into seamless applications. Let’s
+            create something amazing!
           </p>
           <div className="flex justify-center md:justify-start">
             <a
