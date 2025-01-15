@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from "react";
-import { BiMenu, BiX } from "react-icons/bi";
+import { useEffect, useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaFolderOpen, FaMoon, FaSun, FaToolbox } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
+import { FaRegPenToSquare } from "react-icons/fa6";
+import { BiLogoGmail } from "react-icons/bi";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
@@ -29,27 +30,10 @@ const Navbar = () => {
   }, []);
 
   const [activeSection, setActiveSection] = useState("home");
-  const menuRef = useRef(null);
-
-  const menuOpen = () => {
-    setIsOpen(!isOpen);
-  };
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     const bodyClass = document.body.classList;
@@ -89,7 +73,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         role="navigation"
-        className="mt-5 md:rounded-full fixed z-10 top-0 flex w-full lg:w-[80%] items-center justify-between border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-16 py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md"
+        className="mt-5 md:rounded-full fixed z-10 top-0 flex w-full lg:w-[80%] items-center justify-between border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-8 md:px-16 lg:px-8 py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md"
       >
         <a
           href="#home"
@@ -99,7 +83,7 @@ const Navbar = () => {
           Mahdi Solgi
         </a>
 
-        <ul className="hidden gap-10 md:flex">
+        <ul className="hidden md:gap-5 lg:gap-10 md:flex">
           {["Home", "Tech", "Projects", "Contact"].map((section) => (
             <li key={section}>
               <a
@@ -130,6 +114,14 @@ const Navbar = () => {
             >
               <BsGithub />
             </a>
+          </li>{" "}
+          <li>
+            <a
+              href="mailto:mahdi.solgi.dev@gmail.com"
+              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
+            >
+              <BiLogoGmail />
+            </a>
           </li>
           <li>
             <button
@@ -140,60 +132,43 @@ const Navbar = () => {
             </button>
           </li>
         </ul>
-
-        {isOpen ? (
-          <BiX className="block text-4xl md:hidden" onClick={menuOpen} />
+        {darkMode ? (
+          <FaSun
+            className="block text-3xl md:hidden"
+            onClick={toggleDarkMode}
+          />
         ) : (
-          <BiMenu className="block text-4xl md:hidden" onClick={menuOpen} />
+          <FaMoon
+            className="block text-3xl md:hidden"
+            onClick={toggleDarkMode}
+          />
         )}
       </motion.div>
-
-      <div
-        ref={menuRef}
-        className={` fixed right-0 top-[103px] flex flex-col h-screen w-1/2 items-start justify-start gap-10 border-1 border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-16 py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md z-50  duration-300 ease-in-out ${
-          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-8">
-          {["Home", "Tech", "Projects", "Contact"].map((section) => (
-            <li key={section}>
-              <a
-                href={`#${section}`}
-                className={`font-extrabold transition-all duration-300 cursor-pointer ${
-                  activeSection === section ? "text-green-500" : "opacity-70"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {section}
-              </a>
-            </li>
+      <nav className="fixed z-50 block w-full px-4 md:hidden bottom-6">
+        <nav className="flex justify-between items-center gap-8 h-[60px] px-4 rounded-[12px] shadow-lg bg-[rgba(24,24,29,0.3)] backdrop-blur-[4px]   dark:bg-[rgba(24,24,29,0.73)] dark:border-none">
+          {[
+            { Icon: IoHome, section: "Home" },
+            { Icon: FaToolbox, section: "Tech" },
+            { Icon: FaFolderOpen, section: "Projects" },
+            { Icon: FaRegPenToSquare, section: "Contact" },
+          ].map(({ Icon, section }, index) => (
+            <a
+              key={index}
+              className={`w-full flex justify-center items-center rounded-[12px] py-2 ${
+                activeSection === section
+                  ? "bg-white-10 backdrop-blur-[4px] dark:bg-black-1"
+                  : ""
+              }`}
+              href={`/#${section}`}
+            >
+              <Icon
+                size={24}
+                className="cursor-pointer opacity-70 fill-white"
+              />
+            </a>
           ))}
-          <li>
-            <a
-              href="https://www.linkedin.com/in/mahdi-solgi/"
-              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
-            >
-              <BsLinkedin />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/mahdisolgi1"
-              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
-            >
-              <BsGithub />
-            </a>
-          </li>
-          <li>
-            <button
-              className="text-xl transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
-              onClick={toggleDarkMode}
-            >
-              {darkMode ? <FaSun /> : <FaMoon />}
-            </button>
-          </li>
-        </ul>
-      </div>
+        </nav>
+      </nav>
     </>
   );
 };
