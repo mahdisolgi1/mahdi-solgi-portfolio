@@ -59,7 +59,7 @@ const Tech = () => {
             repeat: Infinity,
             repeatType: "mirror",
             ease: "linear",
-            duration: 35,
+            duration: 25,
           }}
         >
           {techIcons.concat(techIcons).map(({ Icon, color, size }, index) => (
