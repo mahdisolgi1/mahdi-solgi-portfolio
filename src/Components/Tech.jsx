@@ -38,7 +38,7 @@ const Tech = () => {
   return (
     <section
       id="Tech"
-      className="px-5 md:px-24 flex min-h-[70vh] w-full  text-white/ flex-col items-center justify-center gap-16 md:gap-32"
+      className="lg:px-20 md:px-14  px-5 flex min-h-[70vh] w-full  text-white/ flex-col items-center justify-center gap-16 md:gap-32"
     >
       <motion.h1
         initial={{ opacity: 0, y: 50 }}

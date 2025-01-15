@@ -8,7 +8,7 @@ const Footer = () => {
       initial={{ y: 80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="bottom-0 flex items-center justify-between w-full px-16 pt-6 border-b pb-28 md:pb-6 border-b-gray-700 bg-black/80 dark:bg-white/80 text-gray-50 dark:text-gray-950 backdrop-blur-md md:justify-between"
+      className="bottom-0 flex items-center justify-between w-full px-10 pt-6 border-b sm:px-16 pb-28 md:pb-6 border-b-gray-700 bg-black/80 dark:bg-white/80 text-gray-50 dark:text-gray-950 backdrop-blur-md md:justify-between"
     >
       <ul className="hidden gap-5 md:flex md:gap-10">
         <a

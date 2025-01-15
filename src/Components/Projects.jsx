@@ -94,7 +94,7 @@ const Projects = () => {
   return (
     <section
       id="Projects"
-      className="flex flex-col items-center justify-center w-full min-h-screen gap-16 p-4 md:px-14 md:py-24"
+      className="flex flex-col items-center justify-center w-full min-h-screen gap-16 p-4 px-5 pb-24 lg:px-20 md:px-14 md:py-24"
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}

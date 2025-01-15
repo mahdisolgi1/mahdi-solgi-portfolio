@@ -73,7 +73,7 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         role="navigation"
-        className="mt-5 md:rounded-full fixed z-10 top-0 flex w-full lg:w-[80%] items-center justify-between border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-8 md:px-16 lg:px-8 py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md"
+        className="mt-5 md:rounded-full fixed z-10 top-0 flex w-full lg:w-[80%] items-center justify-between border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-8 md:px-16 lg:px-8 py-3 sm:py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md"
       >
         <a
           href="#home"
@@ -145,7 +145,12 @@ const Navbar = () => {
         )}
       </motion.div>
       <nav className="fixed z-50 block w-full px-4 md:hidden bottom-6">
-        <nav className="flex justify-between items-center gap-8 h-[60px] px-4 rounded-[12px] shadow-lg bg-[rgba(24,24,29,0.3)] backdrop-blur-[4px]   dark:bg-[rgba(24,24,29,0.73)] dark:border-none">
+        <motion.nav
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-between items-center gap-8 h-[60px] px-4 rounded-[12px] shadow-lg bg-[rgba(24,24,29,0.3)] backdrop-blur-[4px]   dark:bg-[rgba(24,24,29,0.73)] dark:border-none"
+        >
           {[
             { Icon: IoHome, section: "Home" },
             { Icon: FaToolbox, section: "Tech" },
@@ -167,7 +172,7 @@ const Navbar = () => {
               />
             </a>
           ))}
-        </nav>
+        </motion.nav>
       </nav>
     </>
   );

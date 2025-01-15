@@ -55,9 +55,9 @@ const Contact = () => {
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
       id="Contact"
-      className="flex min-h-[70vh] min-w-full items-center justify-center"
+      className="flex min-h-[70vh] min-w-full items-center pb-24  justify-center"
     >
-      <div className="flex flex-col items-center justify-center w-full p-6 space-y-6 md:p-14">
+      <div className="flex flex-col items-center justify-center w-full space-y-6 md:p-14">
         <h1 className="text-4xl font-light text-gray-950 dark:text-white md:text-6xl">
           Get in Touch
         </h1>
