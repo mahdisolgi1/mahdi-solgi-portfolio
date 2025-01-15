@@ -93,7 +93,7 @@ const ProjectCard = ({ project }) => {
 const Projects = () => {
   return (
     <section
-      id="projects"
+      id="Projects"
       className="flex flex-col items-center justify-center w-full min-h-screen gap-16 p-4 md:px-14 md:py-24"
     >
       <motion.div

@@ -37,7 +37,7 @@ const Tech = () => {
 
   return (
     <section
-      id="tech"
+      id="Tech"
       className="px-5 md:px-24 flex min-h-[70vh] w-full  text-white/ flex-col items-center justify-center gap-16 md:gap-32"
     >
       <motion.h1

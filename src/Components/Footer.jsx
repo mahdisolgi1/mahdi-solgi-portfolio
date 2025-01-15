@@ -10,25 +10,25 @@ const Footer = () => {
     >
       <ul className="hidden gap-5 md:flex md:gap-10">
         <a
-          href="#home"
+          href="#Home"
           className="font-extrabold transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
         >
           <li>Home</li>
         </a>
         <a
-          href="#tech"
+          href="#Tech"
           className="font-extrabold transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
         >
           <li>Tech</li>
         </a>
         <a
-          href="#projects"
+          href="#Projects"
           className="font-extrabold transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
         >
           <li className="cursor-pointer">Projects</li>
         </a>
         <a
-          href="#contact"
+          href="#Contact"
           className="font-extrabold transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
         >
           <li>Contact</li>

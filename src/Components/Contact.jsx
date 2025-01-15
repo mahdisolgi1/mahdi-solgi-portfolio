@@ -54,7 +54,7 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      id="contact"
+      id="Contact"
       className="flex min-h-[70vh] min-w-full items-center justify-center"
     >
       <div className="flex flex-col items-center justify-center w-full p-6 space-y-6 md:p-14">
