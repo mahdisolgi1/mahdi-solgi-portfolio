@@ -12,10 +12,10 @@ const Footer = () => {
     >
       <ul className="hidden gap-5 md:flex md:gap-10">
         <a
-          href="#Home"
+          href="#About"
           className="font-extrabold transition-all duration-300 cursor-pointer opacity-70 hover:opacity-100"
         >
-          <li>Home</li>
+          <li>About</li>
         </a>
         <a
           href="#Tech"
