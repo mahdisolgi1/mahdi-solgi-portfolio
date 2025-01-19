@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const Hero = () => {
   return (
     <section
-      id="Home"
+      id="About"
       className="flex flex-col-reverse items-center justify-center w-full min-h-screen px-5 mt-24 md:gap-12 sm:mt-16 md:mt-28 lg:mt-14 md:px-14 lg:px-20 md:flex-row lg:justify-between"
     >
       <div className="flex flex-col items-center justify-center w-full gap-8 sm:justify-start md:w-3/5">

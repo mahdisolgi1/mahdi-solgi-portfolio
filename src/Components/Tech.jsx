@@ -14,24 +14,63 @@ import { RxGithubLogo } from "react-icons/rx";
 
 const Tech = () => {
   const techIcons = [
-    { Icon: BiLogoReact, color: "text-sky-500" },
+    {
+      Icon: BiLogoReact,
+      color: "text-sky-500",
+      link: "https://reactjs.org/",
+    },
     {
       Icon: SiNextdotjs,
       size: "100",
       color: "text-black/60 dark:text-white/60",
+      link: "https://nextjs.org/",
     },
-    { Icon: BiLogoTypescript, color: "text-blue-500" },
-    { Icon: BiLogoTailwindCss, color: "text-sky-500" },
-    { Icon: BiLogoSass, color: "text-pink-400" },
-    { Icon: SiMui, size: "100", color: "text-black/60 dark:text-white/60 " },
-    { Icon: BiLogoCss3, color: "text-blue-500" },
-    { Icon: BiLogoJavascript, color: "text-yellow-500" },
-    { Icon: BiLogoHtml5, color: "text-orange-500" },
-    { Icon: BiLogoGit, color: "text-orange-700" },
+    {
+      Icon: BiLogoTypescript,
+      color: "text-blue-500",
+      link: "https://www.typescriptlang.org/",
+    },
+    {
+      Icon: BiLogoTailwindCss,
+      color: "text-sky-500",
+      link: "https://tailwindcss.com/",
+    },
+    {
+      Icon: BiLogoSass,
+      color: "text-pink-400",
+      link: "https://sass-lang.com/",
+    },
+    {
+      Icon: SiMui,
+      size: "100",
+      color: "text-black/60 dark:text-white/60",
+      link: "https://mui.com/",
+    },
+    {
+      Icon: BiLogoCss3,
+      color: "text-blue-500",
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    },
+    {
+      Icon: BiLogoJavascript,
+      color: "text-yellow-500",
+      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    },
+    {
+      Icon: BiLogoHtml5,
+      color: "text-orange-500",
+      link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      Icon: BiLogoGit,
+      color: "text-orange-700",
+      link: "https://git-scm.com/",
+    },
     {
       Icon: RxGithubLogo,
       size: "100",
-      color: "text-black/60 dark:text-white/60 ",
+      color: "text-black/60 dark:text-white/60",
+      link: "https://github.com/",
     },
   ];
 
@@ -62,21 +101,30 @@ const Tech = () => {
             duration: 25,
           }}
         >
-          {techIcons.concat(techIcons).map(({ Icon, color, size }, index) => (
-            <motion.li
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex-shrink-0"
-              key={index}
-            >
-              <Icon
-                size={size}
-                className={`cursor-pointer text-[80px] ${color} transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]`}
-              />
-            </motion.li>
-          ))}
+          {techIcons
+            .concat(techIcons)
+            .map(({ Icon, color, size, link }, index) => (
+              <motion.li
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex-shrink-0"
+                key={index}
+              >
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-all duration-300 cursor-pointer "
+                >
+                  <Icon
+                    size={size}
+                    className={`text-[80px] ${color} sm:text-[100px] md:text-[120px]  transition-all duration-300 hover:-translate-y-5`}
+                  />
+                </a>
+              </motion.li>
+            ))}
         </motion.ul>
       </div>
     </section>

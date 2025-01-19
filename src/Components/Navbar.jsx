@@ -76,7 +76,7 @@ const Navbar = () => {
         className="mt-5 md:rounded-full fixed z-10 top-0 flex w-full lg:w-[80%] items-center justify-between border-b border-b-gray-700 bg-black/80 dark:bg-white/80 px-8 md:px-16 lg:px-8 py-3 sm:py-6 text-gray-50 dark:text-gray-950 backdrop-blur-md"
       >
         <a
-          href="#home"
+          href="#About"
           id="logo"
           className="text-3xl font-semibold text-transparent transition-all duration-300 bg-gradient-to-r from-green-500 to-yellow-500 dark:from-green-800 dark:to-yellow-700 bg-clip-text opacity-80 hover:opacity-100"
         >
@@ -84,7 +84,7 @@ const Navbar = () => {
         </a>
 
         <ul className="hidden md:gap-5 lg:gap-10 md:flex">
-          {["Home", "Tech", "Projects", "Contact"].map((section) => (
+          {["About", "Tech", "Projects", "Contact"].map((section) => (
             <li key={section}>
               <a
                 href={`#${section}`}
@@ -152,7 +152,7 @@ const Navbar = () => {
           className="flex justify-between items-center gap-8 h-[60px] px-4 rounded-[12px] shadow-lg bg-[rgba(24,24,29,0.3)] backdrop-blur-[4px]   dark:bg-[rgba(24,24,29,0.73)] dark:border-none"
         >
           {[
-            { Icon: IoHome, section: "Home" },
+            { Icon: IoHome, section: "About" },
             { Icon: FaToolbox, section: "Tech" },
             { Icon: FaFolderOpen, section: "Projects" },
             { Icon: FaRegPenToSquare, section: "Contact" },
