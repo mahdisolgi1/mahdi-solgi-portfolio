@@ -18,62 +18,69 @@ const Tech = () => {
       Icon: BiLogoReact,
       color: "text-sky-500",
       link: "https://reactjs.org/",
+      name: "React",
     },
     {
       Icon: SiNextdotjs,
-      size: "100",
       color: "text-black/60 dark:text-white/60",
       link: "https://nextjs.org/",
+      name: "Next.js",
     },
     {
       Icon: BiLogoTypescript,
       color: "text-blue-500",
       link: "https://www.typescriptlang.org/",
+      name: "TypeScript",
     },
     {
       Icon: BiLogoTailwindCss,
       color: "text-sky-500",
       link: "https://tailwindcss.com/",
+      name: "Tailwind",
     },
     {
       Icon: BiLogoSass,
       color: "text-pink-400",
       link: "https://sass-lang.com/",
+      name: "Sass",
     },
     {
       Icon: SiMui,
-      size: "100",
       color: "text-black/60 dark:text-white/60",
       link: "https://mui.com/",
+      name: "MUI",
     },
     {
       Icon: BiLogoCss3,
       color: "text-blue-500",
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      name: "CSS3",
     },
     {
       Icon: BiLogoJavascript,
       color: "text-yellow-500",
       link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      name: "JavaScript",
     },
     {
       Icon: BiLogoHtml5,
       color: "text-orange-500",
       link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      name: "HTML5",
     },
     {
       Icon: BiLogoGit,
       color: "text-orange-700",
       link: "https://git-scm.com/",
+      name: "Git",
     },
     {
       Icon: RxGithubLogo,
-      size: "100",
       color: "text-black/60 dark:text-white/60",
       link: "https://github.com/",
+      name: "GitHub",
     },
   ];
-
   return (
     <section
       id="Tech"
@@ -88,9 +95,9 @@ const Tech = () => {
         Technologies
       </motion.h1>
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden overflow-x-auto md:overflow-x-hidden">
         <motion.ul
-          className="flex items-center gap-10 p-5"
+          className="flex items-center gap-10 py-10 whitespace-nowrap"
           animate={{
             x: ["0%", "-100%"],
           }}
@@ -103,25 +110,34 @@ const Tech = () => {
         >
           {techIcons
             .concat(techIcons)
-            .map(({ Icon, color, size, link }, index) => (
+            .map(({ Icon, color, link, name }, index) => (
               <motion.li
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="flex-shrink-0"
+                className="relative flex-shrink-0"
                 key={index}
               >
                 <a
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all duration-300 cursor-pointer "
+                  className="relative transition-all duration-300 cursor-pointer group"
                 >
-                  <Icon
-                    size={size}
-                    className={`text-[80px] ${color} sm:text-[100px] md:text-[120px]  transition-all duration-300 hover:-translate-y-5`}
-                  />
+                  <motion.div
+                    initial={{ y: 0 }}
+                    whileHover={{ y: -20 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="flex flex-col items-center"
+                  >
+                    <Icon
+                      className={`text-[80px] ${color} sm:text-[100px] md:text-[120px] transition-all`}
+                    />
+                    <span className="absolute px-2 py-1 text-xs text-black -translate-x-1/2 rounded-md dark:text-white lg:text-base md:text-sm left-1/2 top-full ">
+                      {name}
+                    </span>
+                  </motion.div>
                 </a>
               </motion.li>
             ))}
