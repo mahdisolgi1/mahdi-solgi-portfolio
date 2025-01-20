@@ -95,7 +95,7 @@ const Tech = () => {
         Technologies
       </motion.h1>
 
-      <div className="relative w-full overflow-hidden overflow-x-auto scrollbar-hidden md:overflow-x-hidden">
+      <div className="relative w-full overflow-hidden overflow-x-auto scrollbar-hidden lg:overflow-x-hidden">
         <motion.ul
           className="flex items-center gap-10 py-12 md:py-10 whitespace-nowrap"
           animate={{
